@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact - Company Bootstrap Template</title>
+  <title>IES Website</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
@@ -36,7 +36,7 @@
   ======================================================== -->
 </head>
 
-<body class="contact-page">
+<body class="index-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center">
@@ -44,32 +44,39 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Company</h1><span>.</span>
+        <div class="class="container section-title" data-aos="fade-up">
+          <img src="assets/img/client-logo/IESlogo-remove.png" class="img-fluid" width='80' alt="logo">
+        </div><!-- End Client Item -->
+        <h1 class="sitename">IES</h1><span>.</span>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="about.html" class="">About</a></li>
+          <li><a href="#advantage" class="">ADVANTAGE</a></li>
+          <li><a href="team.html">Team Members</a></li>
+          <li><a href="testimonials-staff.html">Company Staff</a></li><!--portfolio-->
+          <li><a href="pricing.html">Service</a></li>
+          <li><a href="blog-gallery.html">Gallery</a></li><!--galley-->
+          <!--<li class="dropdown"><a href="about.html"><span>Machinaries</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>-->
             <ul>
-              <li><a href="team.html">Team</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <!--<li><a href="team.html">Team</a></li>
+              <li><a href="testimonials.html">Staff</a></li>-->
+              <li class="dropdown"><a href="#"><span>Machinaries</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
+                  <li><a href="portfolio0-machinedetails.html">Machine 1</a></li>
+                  <li><a href="portfolio1-machinedetails.html">Machine 2</a></li>
+                  <li><a href="portfolio2-machinedetails.html">Machine 3</a></li>
+                  <li><a href="portfolio3-machinedetails.html">Machine 4</a></li>
+                  <li><a href="portfolio4-machinedetails.html">Machine 5</a></li>
+                  <li><a href="portfolio5-machinedetails.html">Machine 6</a></li>
+                  <li><a href="portfolio6-machinedetails.html">Machine 6</a></li>
                 </ul>
               </li>
             </ul>
           </li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -114,13 +121,13 @@
 
             <div class="info">
               <h3>Get in touch</h3>
-              <p>Et id eius voluptates atque nihil voluptatem enim in tempore minima sit ad mollitia commodi minus.</p>
+              <p><h3>Innovative Engineering Solutions</h3></p>
 
               <div class="info-item d-flex">
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
                   <h4>Location:</h4>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <p>Dasarahosahalli Bangarapet[T] kolar[D]<br>Karnataka[S]- 563114</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -128,7 +135,7 @@
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h4>Email:</h4>
-                  <p>info@example.com</p>
+                  <p>vinod@vinskopter.com</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -136,7 +143,7 @@
                 <i class="bi bi-phone flex-shrink-0"></i>
                 <div>
                   <h4>Call:</h4>
-                  <p>+1 5589 55488 55</p>
+                  <p>+91 9880398238</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -148,24 +155,39 @@
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+                  <!-- <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required=""> -->
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+                  <!-- <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required=""> -->
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
+                <!-- <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required=""> -->
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" placeholder="Message" required=""></textarea>
+                <!-- <textarea class="form-control" name="message" placeholder="Message" required=""></textarea> -->
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
+                <div class="col-12 text-center">
+                  <!-- <div class="loading"></div> -->
+                  <div class="error-message"></div>
+                </div>
+                <!-- <div class="loading">Loading</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div> -->
+              <div>
+                <div class="col-lg-4 col-md-12 footer-newsletter">
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch"></div>
+                  <div class="col-12 text-center">
+                    <div class="carousel-item active">
+                     <div class="container">
+                        <div class="loading"><h4>Thank you for your response</h4></div>
+                        <div class="loading"><h3>Your message will be added to the sheet . Thank you!</h3></div>
+                        <p></p>
+                        
+                        <article><a href="https://forms.gle/CmeTe6MbhP8Z8gKQ8" class="btn-get-started"><h3>Submit message</h3></a></article>
+                      </div>
+            </div>
             </form>
           </div><!-- End Contact Form -->
 
@@ -183,13 +205,13 @@
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Company</span>
+            <span class="sitename">IES Company</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <p>Dasarahosahalli Bangarapet[T] kolar[D] </p>
+            <p>Karnataka[S]- 563114</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+91 98803 98238</span></p>
+            <p><strong>Email:</strong> <span>vinod@vinskopter.com</span></p>
           </div>
           <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-twitter-x"></i></a>
@@ -213,38 +235,48 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#">Machine Design</a></li>
+            <li><a href="#">Machinaries Developing</a></li>
+            <li><a href="#">Machinaries Management</a></li>
+            <li><a href="#">Machinaries Marketing</a></li>
+            <!--<li><a href="#">Graphic Design</a></li>-->
           </ul>
         </div>
 
         <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-          </form>
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch"></div>
+          <div class="col-12 text-center">
+            <div class="carousel-item active">
+             <div class="container">
+                <div class="loading"><h4>Thank you for your response</h4></div>
+                <div class="loading"><h3>Your message will be added to the sheet . Thank you!</h3></div>
+                <p></p>
+                
+                <article><a href="about.html" class="btn-get-started"><h1>Submit message</h1></a></article>
+              </div>
+          </div>
+
+          </div>
+
         </div>
+      </form>
+    </div><!-- End Contact Form -->
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Company</strong> <span>All Rights Reserved</span></p>
+      <p> <span></span> <strong class="px-1 sitename"><h2>Innovative Engineering Solutions</h2></strong> <span></span></p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+       <!-- Designed by <a href="#">BootstrapMade</a>-->
       </div>
     </div>
+  </div>
+</div>
 
   </footer>
 
