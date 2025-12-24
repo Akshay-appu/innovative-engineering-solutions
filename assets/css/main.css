@@ -2627,3 +2627,52 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+
+/*--------------------------------------------------------------
+# Top Notification Popup (Added)
+--------------------------------------------------------------*/
+.top-notification {
+  position: fixed;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  text-align: center;
+  padding: 14px 50px 14px 20px;
+  font-weight: 600;
+  font-size: 15px;
+  z-index: 99999;
+  transition: top 0.5s ease;
+  animation: notifyBlink 1.6s infinite;
+}
+
+.top-notification.show {
+  top: 0;
+}
+
+@keyframes notifyBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.top-notification a {
+  color: var(--contrast-color);
+  text-decoration: underline;
+  margin-left: 8px;
+}
+
+.top-notification .close-notify {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--contrast-color);
+  color: var(--accent-color);
+  border: none;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  font-weight: bold;
+  cursor: pointer;
+}
