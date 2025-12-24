@@ -178,6 +178,12 @@
       </div>
 
     </section><!-- /Hero Section -->
+   <!-- Top Notification Popup -->
+<div id="topNotify" class="top-notification">
+  <i>Important Update: Projects are opened click to view.</i>
+  <a href="contact.html#contact">Apply Now</a>
+  <button class="close-notify" onclick="closeNotify()">×</button>
+</div>
 
     <div class="container section-title" data-aos="fade-up">
       <h2>Welcome</h2>
@@ -1801,7 +1807,17 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+   <script>
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      document.getElementById("topNotify").classList.add("show");
+    }, 800);
+  });
 
+  function closeNotify() {
+    document.getElementById("topNotify").classList.remove("show");
+  }
+</script>
 </body>
 
 </html>
