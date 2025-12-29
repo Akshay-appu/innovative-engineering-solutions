@@ -1819,6 +1819,49 @@
     document.getElementById("topNotify").classList.remove("show");
   }
 </script>
+ <script>
+  window.addEventListener("load", function () {
+    const overlay = document.getElementById("cautionOverlay");
+
+    // Detect navigation type
+    const navEntry = performance.getEntriesByType("navigation")[0];
+    const navType = navEntry ? navEntry.type : "navigate";
+
+    // Check if caution was already seen in this session
+    const seenInSession = sessionStorage.getItem("cautionSeen");
+
+    // Show if:
+    // 1. First visit (navigate + not seen)
+    // 2. Page reload
+    if ((navType === "navigate" && !seenInSession) || navType === "reload") {
+      overlay.style.display = "flex";
+    } else {
+      overlay.style.display = "none";
+    }
+  });
+
+  function closeCaution() {
+    sessionStorage.setItem("cautionSeen", "true");
+    document.getElementById("cautionOverlay").style.display = "none";
+  }
+</script>
+
+
+
+<!-- Caution Modal -->
+<div id="cautionOverlay">
+  <div class="caution-box">
+    <button class="caution-close" onclick="closeCaution()">×</button>
+    <h2>CAUTION</h2>
+    <p><b>
+      INNOVATIVE ENGINEERING SOLUTIONS DO NOT AUTHORIZE ANY THIRD PARTY
+      TO DO BUSINESS ON ITS BEHALF. ANY SUCH AUTHORIZATION PRODUCED BY
+      ANY THIRD PARTY MAY PLEASE BE TREATED AS FORGED AND BROUGHT INTO
+      IMMEDIATE NOTICE OF INNOVATIVE ENGINEERING SOLUTIONS.</b>
+    </p>
+  </div>
+</div>
+
 </body>
 
 </html>
