@@ -2764,3 +2764,47 @@ section,
     transform: scale(1);
   }
 }
+
+/* IES Marquee Section */
+.ies-marquee-wrapper {
+  margin-top: 10px;                 /* ⬅️ reduced gap */
+  margin-bottom: 10px;              /* keeps spacing neat */
+  overflow: hidden;
+  background: rgba(220, 20, 60, 0.9);
+  padding: 12px 0;
+}
+
+
+/* Marquee Animation */
+.ies-marquee {
+  white-space: nowrap;
+  display: inline-block;
+  animation: iesScroll 18s linear infinite;
+}
+
+/* Marquee Text */
+.ies-marquee span {
+  color: #ffffff;
+  font-size: 18px;        /* ⬅️ increased font size */
+  font-weight: 600;       /* better readability */
+  letter-spacing: 0.5px; /* professional spacing */
+  padding-left: 100%;
+}
+
+/* Smooth scrolling animation */
+@keyframes iesScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .ies-marquee span {
+    font-size: 16px;      /* still bigger on mobile */
+  }
+}
+
