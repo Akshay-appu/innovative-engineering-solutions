@@ -2684,3 +2684,83 @@ section,
   letter-spacing: 1.2px;
 } */
 
+/* Caution Overlay - Light Crimson Transparent */
+#cautionOverlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(220, 20, 60, 0.35); /* light transparent crimson */
+  backdrop-filter: blur(2px);
+
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Caution Box */
+.caution-box {
+  background: #ffffff;
+  max-width: 420px;
+  width: 90%;
+  padding: 28px 26px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  position: relative;
+  animation: scaleIn 0.35s ease;
+}
+
+.caution-box h2 {
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+  color: #111;
+}
+
+.caution-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Close Button */
+.caution-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Animation */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Professional zoom in & zoom out animation */
+.caution-box {
+  animation: cautionZoom 2.4s ease-in-out infinite;
+}
+
+/* Zoom animation */
+@keyframes cautionZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
