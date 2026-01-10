@@ -194,21 +194,7 @@
 <section id="machines" class="container my-5">
 
   <h2 class="text-center mb-4">Our Machines</h2>
-
-  <!-- Search Box -->
-  <div class="row mb-4">
-    <div class="col-md-6 mx-auto">
-      <input
-        type="text"
-        id="machine-search"
-        class="form-control"
-        placeholder="Search machines..."
-        onkeyup="searchMachines()"
-      />
-    </div>
-  </div>
-
-  <!-- Machines Grid -->
+<!-- Machines Grid -->
   <div id="machines-container" class="row g-4"></div>
 
 </section>
@@ -1927,8 +1913,12 @@
   // Toggle dropdown on icon click
   searchIcon.addEventListener("click", function (e) {
     e.stopPropagation();
+
     searchDropdown.style.display =
       searchDropdown.style.display === "block" ? "none" : "block";
+
+    // ✅ AUTO FOCUS INPUT (IMPORTANT)
+    searchDropdown.querySelector("input").focus();
   });
 
   // Prevent dropdown from closing when clicking inside input
@@ -1941,7 +1931,6 @@
     searchDropdown.style.display = "none";
   });
 </script>
-
 </body>
 
 </html>
