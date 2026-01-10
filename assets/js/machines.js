@@ -2,10 +2,12 @@ const API_BASE = "https://ies-backend-wbhs.onrender.com";
 
 /* Load all machines */
 async function loadMachines() {
+  const container = document.getElementById("machines-container");
+  if (!container) return; // ✅ safety check
+
   const res = await fetch(`${API_BASE}/api/machines`);
   const machines = await res.json();
 
-  const container = document.getElementById("machines-container");
   container.innerHTML = "";
 
   machines.forEach(m => {
@@ -26,18 +28,24 @@ async function loadMachines() {
 
 /* Search machines from NAVBAR */
 async function searchMachinesFromNav() {
-  const q = document.getElementById("nav-machine-search").value;
+  const input = document.getElementById("nav-machine-search");
+  const container = document.getElementById("machines-container");
 
-  // If empty, reload all machines
+  if (!input || !container) return; // ✅ safety check
+
+  const q = input.value;
+
+  // If empty → reload all machines
   if (q.trim() === "") {
     loadMachines();
     return;
   }
 
-  const res = await fetch(`${API_BASE}/api/machines/search?q=${q}`);
+  const res = await fetch(
+    `${API_BASE}/api/machines/search?q=${q}`
+  );
   const machines = await res.json();
 
-  const container = document.getElementById("machines-container");
   container.innerHTML = "";
 
   machines.forEach(m => {
@@ -55,9 +63,11 @@ async function searchMachinesFromNav() {
     `;
   });
 
-  // Scroll to machines section automatically
+  // ✅ Auto scroll to machines section
   document
     .getElementById("machines")
     .scrollIntoView({ behavior: "smooth" });
 }
 
+/* Auto load machines when page opens */
+window.addEventListener("load", loadMachines);
