@@ -116,16 +116,27 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <div class="header-social-links">
-        <a href="#" class="twitter"><i class="bi bi-youtube"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      </div>
+          <div class="header-social-links nav-search-wrapper position-relative">
 
-    </div>
-    </div>
-  </header>
+  <a href="#" class="twitter"><i class="bi bi-youtube"></i></a>
+  <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+  <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+  <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+
+  <!-- Search Icon -->
+  <i class="bi bi-search nav-search-icon" id="navSearchIcon"></i>
+
+  <!-- Dropdown Search -->
+  <div class="nav-search-dropdown" id="navSearchDropdown">
+   <input
+  type="text"
+  id="nav-machine-search"
+  placeholder="Search machines..."
+  onkeyup="searchMachinesFromNav()"
+/>
+</div>
+</div>
+</header>
 
   <main class="main">
 
@@ -1909,6 +1920,27 @@
     </p>
   </div>
 </div>
+ <script>
+  const searchIcon = document.getElementById("navSearchIcon");
+  const searchDropdown = document.getElementById("navSearchDropdown");
+
+  // Toggle dropdown on icon click
+  searchIcon.addEventListener("click", function (e) {
+    e.stopPropagation();
+    searchDropdown.style.display =
+      searchDropdown.style.display === "block" ? "none" : "block";
+  });
+
+  // Prevent dropdown from closing when clicking inside input
+  searchDropdown.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
+
+  // Close only when clicking outside
+  document.addEventListener("click", function () {
+    searchDropdown.style.display = "none";
+  });
+</script>
 
 </body>
 
