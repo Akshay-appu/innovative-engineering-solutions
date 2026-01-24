@@ -2836,3 +2836,18 @@ section,
   background: #0b5ed7;
 }
 
+.whatsapp-float {
+  position: fixed;
+  bottom: 80px;   /* 🔼 moved up from 20px → 80px */
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 99999;
+}
+
