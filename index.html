@@ -1796,6 +1796,22 @@
         <button type="submit" class="btn btn-primary"><h3>submit Comment</h3></button></a>
       </div>
 
+          <!-- Contact Form -->
+<div class="footer-contact-form">
+  <h4 style="color:#fff;">Send Us a Message</h4>
+
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <p id="form-status" style="margin-top:10px;"></p>
+</div>
+
+
                 
 <!--                 <article><a href="about.html" class="btn-get-started"><h1>Submit message</h1></a></article> -->
               </div>
@@ -1931,6 +1947,37 @@
     searchDropdown.style.display = "none";
   });
 </script>
+
+ <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function () {
+    emailjs.init("fp2ihnbxtgJ9bg1at"); // 🔴 replace
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_1tr6gbr",   // 🔴 replace
+        "template_2beo738",  // 🔴 replace
+        this
+      )
+      .then(
+        function () {
+          document.getElementById("form-status").innerHTML =
+            "<span style='color:lightgreen;'>Message sent successfully!</span>";
+          document.getElementById("contact-form").reset();
+        },
+        function (error) {
+          document.getElementById("form-status").innerHTML =
+            "<span style='color:red;'>Failed to send message.</span>";
+        }
+      );
+  });
+</script>
+
 </body>
 
 </html>
