@@ -193,7 +193,7 @@
           </div>
 
          <div class="col-lg-8">
-           <form class="php-email-form" id="contact-form">
+           <form id="contact-form">
   <div class="row">
     <div class="col-md-6 form-group">
       <input type="text" name="name" class="form-control" placeholder="Your Name" required>
@@ -204,9 +204,16 @@
     </div>
   </div>
 
-  <!-- <div class="form-group mt-3">
-    <input type="tel" name="phone" class="form-control" placeholder="Your Phone Number" required>
-  </div> -->
+  <div class="form-group mt-3">
+  <input
+    type="tel"
+    name="phone"
+    class="form-control"
+    placeholder="Your Phone Number"
+    required
+    style="font-weight: normal !important;"
+  >
+</div>
 
   <div class="form-group mt-3">
     <input type="text" name="subject" class="form-control" placeholder="Subject" required>
@@ -350,7 +357,7 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
