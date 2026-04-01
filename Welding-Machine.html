@@ -555,18 +555,252 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <a
-  href="https://wa.me/917619118607?text=Hello%20Innovative%20Engineering%20Solutions"
-  class="whatsapp-float"
-  target="_blank"
->
-  <img
-    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-    alt="WhatsApp"
-    width="32"
-    height="32"
-  />
-</a>
+  <!-- Call Floating Button -->
+<div style="position:fixed; bottom:98px; right:35px; z-index:999;">
+
+  <!-- Call Icon -->
+  <div onclick="toggleCallBox()" 
+       style="width:60px; height:60px; background:#007bff; color:#fff;
+       font-size:24px; border-radius:50%; display:flex; align-items:center;
+       justify-content:center; cursor:pointer;
+
+       /* 🔥 Zoom Animation */
+       animation:zoomCall 2s infinite;">
+       
+       <i class="fas fa-phone-alt"></i>
+  </div>
+
+  <!-- Call Popup -->
+  <div id="callBox" 
+       style="width:260px; background:#fff; border-radius:10px;
+       box-shadow:0 5px 20px rgba(0,0,0,0.2); display:none;
+       margin-bottom:10px; overflow:hidden;">
+
+    <!-- Header -->
+    <div style="background:#007bff; color:#fff; padding:10px;
+                display:flex; justify-content:space-between;">
+      <strong>Innovative Engineering Solutions</strong>
+      <span>Customer Support</span>
+    </div>
+
+    <!-- Body -->
+    <div style="padding:15px; font-size:14px;">
+      <p>⚙️ Need engineering <br>assistance?</p>
+      <p>Call us for expert support in CNC machining, and custom manufacturing.</p>
+    </div>
+
+    <!-- Footer -->
+    <div style="padding:10px; text-align:center;">
+      <a href="tel:+917619118607"
+         style="background:#007bff; color:#fff; padding:8px 15px;
+         border-radius:5px; text-decoration:none;">
+         Call Now
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Animation -->
+<style>
+@keyframes zoomCall {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+function toggleCallBox() {
+  const box = document.getElementById("callBox");
+
+  if (box.style.display === "block") {
+    box.style.display = "none";
+  } else {
+    box.style.display = "block";
+  }
+}
+
+// Close when clicking outside
+document.addEventListener("click", function (event) {
+  const box = document.getElementById("callBox");
+  const icon = event.target.closest("[onclick='toggleCallBox()']");
+
+  if (!box.contains(event.target) && !icon) {
+    box.style.display = "none";
+  }
+});
+</script>
+
+<!-- WhatsApp Floating Button -->
+<div style="position:fixed; bottom:170px; right:35px; z-index:999;">
+
+  <!-- Floating Icon -->
+  <div onclick="toggleWhatsAppBox()" 
+       style="width:60px; height:60px; background:#25D366; color:#fff;
+       font-size:26px; border-radius:50%; display:flex; align-items:center;
+       justify-content:center; cursor:pointer;
+
+       /* 🔥 Zoom Animation */
+       animation:zoomAnim 2s infinite;">
+       
+       <i class="fab fa-whatsapp"></i>
+  </div>
+
+  <!-- Popup Box -->
+  <div id="whatsappBox" 
+       style="width:260px; background:#fff; border-radius:10px;
+       box-shadow:0 5px 20px rgba(0,0,0,0.2); display:none;
+       margin-bottom:10px; overflow:hidden;">
+
+    <!-- Header -->
+    <div style="background:#25D366; color:#fff; padding:10px;
+                display:flex; justify-content:space-between;">
+      <strong>Innovative Engineering Solutions</strong>
+      <span>Online</span>
+    </div>
+
+    <!-- Body -->
+    <div style="padding:15px; font-size:14px;">
+      <p>👋 Hello! Welcome to Innovative Engineering Solutions.</p>
+      <p>How can we assist you with machining, or manufacturing<br>today?</p>
+    </div>
+
+    <!-- Footer -->
+    <div style="padding:10px; text-align:center;">
+      <a href="https://wa.me/917619118607?text=Hello%20I%20need%20engineering%20support"
+         target="_blank"
+         style="background:#25D366; color:#fff; padding:8px 15px;
+         border-radius:5px; text-decoration:none;">
+         Start Chat
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Animation -->
+<style>
+@keyframes zoomAnim {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+function toggleWhatsAppBox() {
+  const box = document.getElementById("whatsappBox");
+
+  if (box.style.display === "block") {
+    box.style.display = "none";
+  } else {
+    box.style.display = "block";
+  }
+}
+
+// Close when clicking outside
+document.addEventListener("click", function (event) {
+  const box = document.getElementById("whatsappBox");
+  const icon = event.target.closest("[onclick='toggleWhatsAppBox()']");
+
+  if (!box.contains(event.target) && !icon) {
+    box.style.display = "none";
+  }
+});
+</script>
+      
+   <!-- Google Review Floating Button -->
+<div style="position:fixed; bottom:241px; right:35px; z-index:999;">
+  <!-- Floating Icon -->
+  <div onclick="toggleGoogleBox()" 
+       style="width:60px; height:60px; background:#ea4335; color:#fff;
+       font-size:26px; border-radius:50%; display:flex; align-items:center;
+       justify-content:center; cursor:pointer;
+
+       /* 🔥 Zoom Animation */
+       animation:zoomGoogle 2s infinite;">
+       
+       <i class="fab fa-google"></i>
+  </div>
+
+  <!-- Review Box -->
+  <div id="googleBox" 
+       style="width:260px; background:#fff; border-radius:10px;
+       box-shadow:0 5px 20px rgba(0,0,0,0.2); display:none;
+       margin-bottom:10px; overflow:hidden;">
+
+    <!-- Header -->
+    <div style="background:#ea4335; color:#fff; padding:10px;
+                display:flex; justify-content:space-between;">
+      <strong>Innovative Engineering Solutions</strong>
+      <span>Leave a Review</span>
+    </div>
+
+    <!-- Body -->
+    <div style="padding:15px; font-size:14px;">
+      <p>⭐ We value your feedback!</p>
+      <p>Please share your experience with us on Google.</p>
+    </div>
+
+    <!-- Footer -->
+    <div style="padding:10px; text-align:center;">
+      <a href="https://www.google.com/maps/place/Innovative+Engineering+Solutions/@12.9898668,78.2195721,17z/data=!4m8!3m7!1s0x3badeb003e459765:0x6ba9ecf452ca87e5!8m2!3d12.9898668!4d78.2195721!9m1!1b1!16s%2Fg%2F11mchty4gt!5m1!1e4?hl=en&entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" 
+         target="_blank"
+         style="background:#ea4335; color:#fff; padding:8px 15px;
+         border-radius:5px; text-decoration:none;">
+         Write Review
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Animation -->
+<style>
+@keyframes zoomGoogle {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+function toggleGoogleBox() {
+  const box = document.getElementById("googleBox");
+
+  if (box.style.display === "block") {
+    box.style.display = "none";
+  } else {
+    box.style.display = "block";
+  }
+}
+
+// Close when clicking outside
+document.addEventListener("click", function (event) {
+  const box = document.getElementById("googleBox");
+  const icon = event.target.closest("[onclick='toggleGoogleBox()']");
+
+  if (!box.contains(event.target) && !icon) {
+    box.style.display = "none";
+  }
+});
+</script>
 
 
 </body>
