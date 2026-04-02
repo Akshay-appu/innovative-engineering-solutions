@@ -386,38 +386,98 @@
   />
 </a> -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 <script>
-(function () {
-  emailjs.init("fp2ihnbxtgJ9bg1at"); // EmailJS Public Key
+(function(){
+    emailjs.init("fp2ihnbxtgJ9bg1at");
 })();
 
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-  e.preventDefault();
+// ✅ FORM SUBMIT HANDLER (matches your current form)
+document.getElementById("contact-form").addEventListener("submit", function(e){
+    e.preventDefault();
 
-  const loading = document.querySelector(".loading");
-  const errorMsg = document.querySelector(".error-message");
-  const sentMsg = document.querySelector(".sent-message");
+    let form = this;
 
-  loading.style.display = "block";
-  errorMsg.style.display = "none";
-  sentMsg.style.display = "none";
+    let name = form.querySelector("input[name='name']").value;
+    let email = form.querySelector("input[name='email']").value;
+    let phone = form.querySelector("input[name='phone']").value;
+    let subject = form.querySelector("input[name='subject']").value;
+    let message = form.querySelector("textarea[name='message']").value;
 
-  emailjs.sendForm(
-    "service_1tr6gbr",   // Service ID
-    "template_2beo738",  // Template ID
-    this
-  ).then(
-    function () {
-      loading.style.display = "none";
-      sentMsg.style.display = "block";
-      document.getElementById("contact-form").reset();
-    },
-    function () {
-      loading.style.display = "none";
-      errorMsg.style.display = "block";
-      errorMsg.innerHTML = "Message failed to send. Try again!";
+    if (!name || !phone || !message) {
+        alert("Please fill all required fields");
+        return;
     }
-  );
+
+    let btn = form.querySelector("button[type='submit']");
+    btn.innerText = "Sending...";
+    btn.disabled = true;
+
+    // ✅ CLEAN PHONE
+    let cleanPhone = phone.replace(/\D/g, "");
+
+    if (cleanPhone.length === 10) {
+        cleanPhone = "91" + cleanPhone;
+    } else if (cleanPhone.length === 11 && cleanPhone.startsWith("0")) {
+        cleanPhone = "91" + cleanPhone.slice(1);
+    } else if (cleanPhone.length === 12 && cleanPhone.startsWith("91")) {
+        // ok
+    } else {
+        alert("Enter valid phone number");
+        btn.innerText = "Send Message";
+        btn.disabled = false;
+        return;
+    }
+
+    // ✅ SEND EMAIL
+    emailjs.send("service_1tr6gbr", "template_2beo738", {
+        first_name: name,
+        email: email,
+        phone: cleanPhone,
+        subject: subject,
+        message: message
+    }).then(function () {
+
+        // ✅ SUCCESS MESSAGE (uses your existing div)
+        let successMsg = form.querySelector(".sent-message");
+        successMsg.style.display = "block";
+
+        form.reset();
+
+        btn.innerText = "Send Message";
+        btn.disabled = false;
+
+        // ✅ AUTO HIDE MESSAGE AFTER 3 SEC
+        setTimeout(() => {
+            successMsg.style.display = "none";
+        }, 3000);
+
+        // ✅ WHATSAPP REDIRECT
+        let clinicNumber = "917619118607";
+
+        let whatsappMessage =
+`Hello, I would like to contact you.
+
+Name: ${name}
+Phone: ${cleanPhone}
+Subject: ${subject}
+
+Message:
+${message}
+
+----------------------------
+Sent via website contact form`;
+
+        window.open(`https://wa.me/${clinicNumber}?text=${encodeURIComponent(whatsappMessage)}`, "_blank");
+
+    }, function (error) {
+        alert("Failed to send message");
+        console.log(error);
+
+        btn.innerText = "Send Message";
+        btn.disabled = false;
+    });
+
 });
 </script>
    <!-- Call Floating Button -->
