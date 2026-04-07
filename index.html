@@ -1506,6 +1506,31 @@
   </footer>
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <style>
+/* ✅ MOBILE OVERLAP FIX */
+@media (max-width: 768px) {
+
+  /* Scroll Top Button (⬆️ red one) */
+  #scroll-top {
+    bottom: 20px !important;
+    right: 10px !important;
+    z-index: 999 !important;
+  }
+
+  /* Main Floating Button (Green +) */
+  #mainFloatingBtn {
+    bottom: 90px !important;
+    right: 10px !important;
+  }
+
+  /* Chatbot Button */
+  #chatbot {
+    bottom: 160px !important;
+    right: 10px !important;
+  }
+
+}
+</style>
 
   <!-- Preloader -->
  <div id="preloader">
