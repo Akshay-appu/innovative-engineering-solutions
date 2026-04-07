@@ -1505,28 +1505,35 @@
 
   </footer>
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    <style>
-/* ✅ MOBILE OVERLAP FIX */
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
+
+<style>
 @media (max-width: 768px) {
 
-  /* Scroll Top Button (⬆️ red one) */
+  /* ⬆️ Scroll Top Button */
   #scroll-top {
+    position: fixed;
     bottom: 20px !important;
     right: 10px !important;
     z-index: 999 !important;
   }
 
-  /* Main Floating Button (Green +) */
+  /* ➕ Main Floating Button */
   #mainFloatingBtn {
-    bottom: 90px !important;
+    position: fixed;
+    bottom: 110px !important;
     right: 10px !important;
+    z-index: 999 !important;
   }
 
-  /* Chatbot Button */
+  /* 🤖 Chatbot Button */
   #chatbot {
-    bottom: 160px !important;
+    position: fixed;
+    bottom: 200px !important;
     right: 10px !important;
+    z-index: 9999 !important;
   }
 
 }
